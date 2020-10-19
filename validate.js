@@ -35,6 +35,8 @@ function checkInputs() {
     //Validate password
     if (passwordValue === '') {
         setErrorMSG(password, 'Password cannot be blank');
+    } else if (!checkPasswordStrength(passwordValue)) {
+        setErrorMSG(password, 'Please enter a strong password');
     } else {
         setSuccessMSG(password);
     }
@@ -68,16 +70,15 @@ function setSuccessMSG(input) {
 }
 
 function isEmailValid(emailValue) {
-    let validCondition = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    let testResult = validCondition.test(emailValue);
+    let validCondition4Email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let testResultOfEmail = validCondition4Email.test(emailValue);
 
-    return testResult;
+    return testResultOfEmail;
 }
 
-/*
-    //Know more about preventDefault fucntion
-    https://www.w3schools.com/jsref/event_preventdefault.asp
+function checkPasswordStrength(passwordValue) {
+    let strongPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    let testResultOfStrongPassword = strongPassword.test(passwordValue);
 
-    //Know more about the trim mehtod
-    https://www.w3schools.com/jsref/jsref_trim_string.asp
-*/
+    return testResultOfStrongPassword;
+}
