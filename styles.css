@@ -206,8 +206,12 @@ body {
 
 /* Media Query Section*/
 
-/* @media (max-width: 650px) {
+@media (max-width: 650px) {
     .icon-bar {
         display: none;
     }
-} */
+
+    .right-arrow {
+        display: block !important;
+    }
+}
