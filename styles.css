@@ -142,6 +142,10 @@ body {
     transform: translateY(-50%);
 }
 
+.hide-icon-bar {
+    display: none;
+}
+
 .icon-bar a {
     display: block;
     text-align: center;
@@ -172,3 +176,38 @@ body {
     border-bottom-right-radius: 5px;
     background: linear-gradient(20deg, #f6d373, #d62977, #7d32aa);
 }
+
+.right-arrow {
+    position: fixed;
+    top: 30%;
+    left: 3px;
+    color: grey;
+    font-size: 1.4rem;
+    text-align: left;
+    width: 100%;
+    display: none !important;
+}
+
+.show-right-arrow {
+    display: block !important;
+}
+
+.left-arrow {
+    color: gray;
+    font-size: 1.4rem;
+    text-align: right;
+    visibility: hidden;
+    width: 100%;
+}
+
+.show-left-arrow {
+    visibility: visible;
+}
+
+/* Media Query Section*/
+
+/* @media (max-width: 650px) {
+    .icon-bar {
+        display: none;
+    }
+} */

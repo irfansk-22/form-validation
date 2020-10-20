@@ -82,3 +82,31 @@ function checkPasswordStrength(passwordValue) {
 
     return testResultOfStrongPassword;
 }
+
+
+/* SOCIAL ICONS SETTINGS*/
+
+let icons = document.querySelector('.icon-bar');
+let arrowToHide = document.querySelector(".left-arrow");
+let arrowToShow = document.querySelector(".right-arrow");
+
+icons.addEventListener('mouseover', function () {
+    arrowToHide.classList.add("show-left-arrow");
+});
+
+icons.addEventListener('mouseout', function() {
+    arrowToHide.classList.remove("show-left-arrow");
+});
+
+
+//Adding Event listener to left arrow
+arrowToHide.addEventListener("click", function() {
+    icons.classList.add('hide-icon-bar');
+    arrowToShow.classList.add('show-right-arrow');
+});
+
+//Adding event listener to right arrow
+arrowToShow.addEventListener('click', function() {
+    arrowToHide.classList.remove('show-right-arrow');
+    icons.classList.remove('hide-icon-bar');
+});
